@@ -15,77 +15,23 @@
 - [ ] MobilePreマイクに触れて、動作していることを確認する
 - [ ] 音声の出力をunavailableにする
 - [ ] `sh mic_check.sh`(一度エラーが起こる)
+- [ ] ブラウザを開いて、インターネットに繋がっているか確認
 - [ ] 機体のスイッチをONにする
 - [ ] 充電器を抜く
 
 - [ ] roslaunch mikata_arm_bringup bringup.launch
-- [ ] GATIGATI
-rosservice call /enable_all
+- [ ] rosservice call /enable_all
+- [ ] アームがガチガチになっているか
 - [ ] roslaunch inspection mimi_base_setup.launch
+- [ ] 音が鳴ったか
 - [ ] sh ~/catkin_ws/src/ti_help_me_carry_behavior/scripts/hmc_start.sh
+- [ ] 自己位置を合わせて少し移動させる
 - [ ] roscd e_human_detector/darknet
 - [ ] rosrun e_human_detector e_human_detector.py
 - [ ] roslaunch realsense r200_nodelet_rgbd.launch
-- [ ] realsenseを物理的に抜き差しする
+- [ ] 物理的な抜き差しなしでRealSenceが光っているか
 - [ ] 自己位置を合わせる
 - [ ] rosrun ti_help_me_carry_behavior HelpMeCarryNode.py
-
-
-
-
-1. リアルセンス
-- [ ] リアルセンスが起動できるか
-```
-$ roslaunch realsense realsense_r200_launch.launch
-```
-2. 人検知
-- [ ] HumanDetectorを起動する
-```
-$ cd ~/catkin_ws/src/e_human_detector/darknet
-$ rosrun e_human_detector e_human_detector.py
-```
-3. Hark
-- [ ] Harkとの接続
-```
-$ sudo chmod 666 /dev/ttyACM0
-```
-- [ ] マニピュレーションの有効化
-```
-$ roslaunch turtlebot_bringup minimal.launch
-```
-- [ ] hark_localize起動
-```
-$ cd ~/catkin_ws/src/hark_localize.py
-```
-- [ ] Harkのデバイス番号を確認
-```
-$ arecord -l
-```
-- [ ] harkのデバイス設定、起動
-```
-$ vim hark_localize.sh
-$ ./ros-localize.sh
-```
-- [ ] SpeechMove起動
-```
-$ cd ~/catkin_ws/src/speech_move/src
-$ python speech_move.py
-```
-- [ ] Command controler起動
-```
-$ cd ~/catkin_ws/src/CommandControler/scripts/
-$ python CommandControler.py
-```
-- [ ] ブラウザを開いて、インターネットに繋がっているか確認
-- [ ] Speech recognition起動(Google Speech API)
-```
-$ python ~/catkin_ws/src/speech_recog/scripts/speech_recog_normal.py
-```
-- [ ] sprのプログラムをrospy.sleep(1)からrospy.sleep(10)に直しているか
-- [ ] sprの起動
-```
-$ python ~/catkin_ws/src/tm_speech_person_recognition/scripts/spr.py
-```
 
 --------------------------------
 
